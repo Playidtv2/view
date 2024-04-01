@@ -45,7 +45,7 @@ function processLink() {
     document.title = 'Xem ' + obj.name + ' Full HD free by Playidtv!';
     var srcTV = obj.value;
     document.getElementById("selectChannel").value = obj.name;
-    if (useExternalSource) { //Nếu là external source thì nhúng vào myIframe
+    if (useExternalSource) { / useExternalSource myIframe
         document.getElementById('myIframe').src = srcTV;
     } else { //เริ่มต้น TVPlay  video-js
         document.getElementById('mainPlayer').innerHTML = "<center id='maintv'><video-js id='tvplay' class='vjs-default-skin' controls /></center>";
@@ -79,8 +79,8 @@ function processMatches(matches) {
         var datetime = new Date(match.Date);
         var liveTime = new Date(datetime);
         var endTime = new Date(datetime);
-		liveTime.setMinutes(datetime.getMinutes() - 15); //Hiện biểu tượng live trước 15'
-        endTime.setHours(datetime.getHours() + 2); //Kết thúc sau 2 tiếng
+		liveTime.setMinutes(datetime.getMinutes() - 15); //แสดงไอคอนสดก่อน 15'
+        endTime.setHours(datetime.getHours() + 2); //สิ้นสุดหลังจาก 2 ชั่วโมง
         var times = ((datetime.getHours() < 10) ? "0" : "") + datetime.getHours() + ":" + ((datetime.getMinutes() < 10) ? "0" : "") + datetime.getMinutes();
         var dts = ((datetime.getDate() < 10) ? "0" : "") + datetime.getDate() + "/" + ((datetime.getMonth() < 9) ? "0" : "") + (datetime.getMonth() + 1) + "/" + datetime.getFullYear();
         var progress = "";
@@ -131,7 +131,7 @@ function processMatches(matches) {
         htmls += "</div>";
         htmls += "</div>";
         if (condition) {
-            mData.innerHTML = htmls + mData.innerHTML; //Cho lên trước
+            mData.innerHTML = htmls + mData.innerHTML; //เอาไว้ก่อน.
         } else {
             mData.innerHTML += htmls;
         }
@@ -165,7 +165,7 @@ function redirect() {
 $(function () {
     var domain = window.location.hostname;
     if (!domain.includes("tekmonts")) {
-        var answer = confirm("Ben กำลังดูหน้า " + ตรง + "\nเว็บไซต์นี้คัดลอกมาจาก \? ?");
+        var answer = confirm("dooballsodกำลังดูหน้า " + ตรง + "\nเว็บไซต์นี้คัดลอกมาจาก \? ?");
         if (answer) {
             window.location.replace("");
         } else {
